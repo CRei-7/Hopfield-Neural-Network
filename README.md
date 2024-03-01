@@ -13,6 +13,7 @@ A simple Hopfield neural network for recalling memories. The network is initiall
 <img src="hopfield.png">
 <img src= "MultiHopfield.png">
 <img src="CoefficientMatrix.png">
+
 ## Installation Guide 
 
 ### Clone this repository
