@@ -43,7 +43,7 @@ def image_to_np(path):
 
 
 # Import the images
-plt.figure(figsize=(15, 10))
+plt.figure(figsize=(15, 20))
 plt.subplots_adjust(hspace=0.5)
 coefMatrix = 0  # Initialize coefficient matrix
 png_files = [file for file in os.listdir('data') if file.endswith('.png')]
@@ -58,16 +58,16 @@ for i, png_file in enumerate(png_files, start=1):
 
     predictedVec = prediction(noisyVec, coefMatrix)
 
-    plt.subplot(4, 4, (i-1)*4 + 1)
+    plt.subplot(8, 4, (i-1)*4 + 1)
     plt.imshow(image, cmap='gray')
     plt.title(f'Imported Picture {i}')
-    plt.subplot(4, 4, (i-1)*4 + 2)
+    plt.subplot(8, 4, (i-1)*4 + 2)
     plt.imshow(vector, cmap='gray')
     plt.title(f'Cleaned and Squared Picture {i}')
-    plt.subplot(4, 4, (i-1)*4 + 3)
+    plt.subplot(8, 4, (i-1)*4 + 3)
     plt.imshow(noisyVec, cmap='gray')
     plt.title(f'Noisy Picture {i}')
-    plt.subplot(4, 4, (i-1)*4 + 4)
+    plt.subplot(8, 4, (i-1)*4 + 4)
     plt.imshow(predictedVec, cmap='gray')
     plt.title(f'Recalled Picture {i}')
 

@@ -34,13 +34,14 @@ def image_to_np(path):
     return np_vector
 
 # Import the image
-image = np.asarray(image_to_np('data/cat.png'))
+image = np.asarray(image_to_np('data/motorcycle.png'))
 vector,noisyVec = imageGenerator(image)
 coefMatrix = trainer(vector)
 predictedVec = prediction(noisyVec,coefMatrix)
 
 plt.figure(figsize=(15,10))
 plt.subplot(1,4,1)
+<<<<<<< HEAD
 plt.imshow(image, cmap='gray')
 plt.title('imported picture')
 plt.subplot(1,4,2)
@@ -51,6 +52,23 @@ plt.imshow(noisyVec, cmap='gray')
 plt.title('noisy picture')
 plt.subplot(1,4,4)
 plt.imshow(predictedVec, cmap='gray')
+=======
+plt.imshow(image, cmap = 'gray')
+plt.title('imported picture')
+plt.subplot(1,4,2)
+plt.imshow(vector, cmap = 'gray')
+plt.title('cleaned and croped picture')
+plt.subplot(1,4,3)
+plt.imshow(noisyVec, cmap = 'gray')
+plt.title('noisy picture')
+plt.subplot(1,4,4)
+plt.imshow(predictedVec, cmap = 'gray')
+>>>>>>> cb4d05fdae325bdab043b16dedffdd5408a58ca9
 plt.title('recalled picture')
 plt.savefig('hopfield.png')
+plt.show()
+plt.clf()
+plt.imshow(coefMatrix)
+plt.title('Single Coefficient Matrix')
+plt.savefig('singleCoeffMatrix')
 plt.show()
